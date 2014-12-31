@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Darren Johnson"]
   spec.email         = ["darrenbjohnson@gmail.com"]
   spec.summary       = %q{A Ruby wrapper for the Taxjar API}
-  spec.description   = %q{A Ruby wrapper for the Taxjar API}
-  spec.homepage      = ""
+  spec.description   = %q{A Ruby wrapper for the Taxjar API's sales tax and tax rate endpoints}
+  spec.homepage      = "http://github.com/djohnson/taxjar"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
@@ -21,8 +21,8 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 1.7"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "minitest", "~> 5.0"
-  spec.add_development_dependency "vcr",  "~> 2.9.0"
-  spec.add_development_dependency "webmock", "~> 1.20.0"
+  spec.add_development_dependency 'vcr', '~> 2.9', '>= 2.9.0'
+  spec.add_development_dependency 'webmock', '~> 1.20', '>= 1.20.0'
 
   spec.add_runtime_dependency "faraday", ['>= 0.7', '< 0.10']
   spec.add_runtime_dependency "faraday_middleware", ['>= 0.8', '< 0.10']

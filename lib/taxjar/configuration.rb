@@ -22,7 +22,7 @@ module Taxjar
 
     DEFAULT_CONNECTION_OPTIONS = {}
     DEFAULT_API_VERSION = 1
-    DEFAULT_API_TIER = :basic
+    DEFAULT_API_TIER = nil
 
     attr_accessor *VALID_CONFIG_KEYS
 

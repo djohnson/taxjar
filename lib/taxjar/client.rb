@@ -45,5 +45,16 @@ module Taxjar
       end
 
     end
+
+    private
+
+    # returns path for TaxJar API endpoint
+    #
+    # examples:
+    # API v1: /v1/sales_tax
+    # API v2: /v2/enhanced/transactions/orders/123
+    def api_path(*args)
+      "/v#{api_version}/#{args.unshift(api_tier).compact.join('/')}"
+    end
   end
 end

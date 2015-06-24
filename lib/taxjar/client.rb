@@ -19,7 +19,12 @@ module Taxjar
     end
 
     def sales_tax(options={})
-      response = @conn.get "/sales_tax", options
+      case api_version
+      when 1
+        response = @conn.get api_path('sales_tax'), options
+      when 2
+        response = @conn.post api_path('taxes'), options
+      end
       response.body
     end
 

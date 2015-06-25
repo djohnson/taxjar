@@ -43,6 +43,7 @@ module Taxjar
       }.merge(connection_options)
 
       @conn = Faraday::Connection.new(options) do |c|
+        c.request :url_encoded
         c.token_auth self.auth_token
         c.use FaradayMiddleware::ParseJson
         c.use FaradayMiddleware::RaiseHttpException

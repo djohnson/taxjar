@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.taxjar.com/v2/standard/taxes
+    body:
+      encoding: UTF-8
+      string: amount=20&from_city=Camarillo&from_country=US&from_state=CA&from_zip=93010&line_items%5B%5D%5Bid%5D=123456&line_items%5B%5D%5Bquantity%5D=1&line_items%5B%5D%5Bunit_price%5D=20&shipping=3&to_city=San+Diego&to_country=US&to_state=CA&to_zip=92116
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - Taxjar ruby Gem 0.1.0
+      Authorization:
+      - Token token="dae79dc5154ccabd7cb169f616d605e7"
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 25 Jun 2015 12:08:53 GMT
+      Status:
+      - 200 OK
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '137'
+      Etag:
+      - '"09664421aea936f5fb03a6c910acb4a6"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - ce88fb05-aa46-46e8-95f5-5fb509e1bd55
+      X-Runtime:
+      - '0.262167'
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"tax":{"taxable_amount":"20.0","amount_to_collect":1.6,"rate":0.08,"has_nexus":true,"freight_taxable":false,"tax_source":"destination"}}'
+    http_version: 
+  recorded_at: Thu, 25 Jun 2015 12:09:02 GMT
+recorded_with: VCR 2.9.3

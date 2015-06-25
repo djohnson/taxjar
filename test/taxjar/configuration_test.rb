@@ -2,7 +2,7 @@ require "./test/test_helper"
 
 describe "configuration" do
 
-  after do
+  before do
     Taxjar.reset
   end
 

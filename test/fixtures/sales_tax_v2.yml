@@ -5,7 +5,7 @@ http_interactions:
     uri: https://api.taxjar.com/v2/standard/taxes
     body:
       encoding: UTF-8
-      string: amount=20&from_city=Camarillo&from_country=US&from_state=CA&from_zip=93010&line_items%5B%5D%5Bid%5D=123456&line_items%5B%5D%5Bquantity%5D=1&line_items%5B%5D%5Bunit_price%5D=20&shipping=3&to_city=San+Diego&to_country=US&to_state=CA&to_zip=92116
+      string: amount=10&from_city=Ramsey&from_country=US&from_state=NJ&from_zip=07446&shipping=2&to_city=Freehold&to_country=US&to_state=NJ&to_zip=07728
     headers:
       Accept:
       - application/json; charset=utf-8
@@ -27,7 +27,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Thu, 25 Jun 2015 12:08:53 GMT
+      - Thu, 25 Jun 2015 12:30:57 GMT
       Status:
       - 200 OK
       Content-Type:
@@ -35,18 +35,18 @@ http_interactions:
       Content-Length:
       - '137'
       Etag:
-      - '"09664421aea936f5fb03a6c910acb4a6"'
+      - '"f5fa2826a66a2b9ac360ed7be14f1679"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - ce88fb05-aa46-46e8-95f5-5fb509e1bd55
+      - dcc0bec5-4749-4b20-bfbe-1a50582abcf3
       X-Runtime:
-      - '0.262167'
+      - '0.453908'
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"tax":{"taxable_amount":"20.0","amount_to_collect":1.6,"rate":0.08,"has_nexus":true,"freight_taxable":false,"tax_source":"destination"}}'
+      string: '{"tax":{"taxable_amount":"12.0","amount_to_collect":0.84,"rate":0.07,"has_nexus":true,"freight_taxable":true,"tax_source":"destination"}}'
     http_version: 
-  recorded_at: Thu, 25 Jun 2015 12:09:02 GMT
+  recorded_at: Thu, 25 Jun 2015 12:31:06 GMT
 recorded_with: VCR 2.9.3

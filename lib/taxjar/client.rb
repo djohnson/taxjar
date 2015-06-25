@@ -57,8 +57,6 @@ module Taxjar
 
     end
 
-    private
-
     # returns path for TaxJar API endpoint
     #
     # examples:

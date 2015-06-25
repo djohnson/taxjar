@@ -29,7 +29,12 @@ module Taxjar
     end
 
     def tax_rate(options={})
-      response = @conn.get "/locations/#{options.delete(:zip)}", options
+      case api_version
+      when 1
+        response = @conn.get "/locations/#{options.delete(:zip)}", options
+      when 2
+        response = @conn.get api_path('rates', options.delete(:zip)), options
+      end
       response.body
     end
 

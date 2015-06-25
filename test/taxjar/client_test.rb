@@ -53,10 +53,28 @@ describe Taxjar::Client do
       }
     end
 
-    it "should return a TaxRate" do
-      VCR.use_cassette("tax_rate") do
-        response = Taxjar::Client.new.tax_rate(@options)
-        response.must_be :hash
+    describe "v1" do
+      it "should return a TaxRate" do
+        VCR.use_cassette("tax_rate_v1") do
+          response = Taxjar::Client.new.tax_rate(@options)
+          response.must_be :hash
+        end
+      end
+    end
+
+    describe "v2" do
+      before do
+        Taxjar.configure do |config|
+          config.api_version = 2
+          config.api_tier = 'standard'
+        end
+      end
+
+      it "should return a SalesTax" do
+        VCR.use_cassette("tax_rate_v2") do
+          response = Taxjar::Client.new.tax_rate(@options)
+          response.must_be :hash
+        end
       end
     end
   end

@@ -7,14 +7,14 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     headers:
+      Accept:
+      - application/json; charset=utf-8
       User-Agent:
-      - Faraday v0.9.0
+      - Taxjar ruby Gem 0.1.0
       Authorization:
       - Token token="dae79dc5154ccabd7cb169f616d605e7"
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
   response:
     status:
       code: 200
@@ -25,7 +25,7 @@ http_interactions:
       Connection:
       - close
       Date:
-      - Tue, 30 Dec 2014 20:42:38 GMT
+      - Thu, 25 Jun 2015 14:46:20 GMT
       Status:
       - 200 OK
       X-Frame-Options:
@@ -34,8 +34,8 @@ http_interactions:
       - 1; mode=block
       X-Content-Type-Options:
       - nosniff
-      X-Ua-Compatible:
-      - chrome=1
+      Warning:
+      - '299: "Deprecated API, respected until 2015-09-01" "2015-06-25T14:46:20.101"'
       Content-Type:
       - application/json; charset=utf-8
       Etag:
@@ -43,14 +43,14 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - de103f0f-274a-4d4a-b064-6c58faa5adc5
+      - 6152b99c-908f-4880-9ac1-6227493d3c9b
       X-Runtime:
-      - '0.012139'
+      - '0.039630'
       Via:
       - 1.1 vegur
     body:
       encoding: UTF-8
       string: '{"location":{"state":"NJ","zip":"07446","state_rate":"0.07","city":"RAMSEY","city_rate":"0.0","county":"BERGEN","county_rate":"0.0","combined_district_rate":"0.0","combined_rate":"0.07"}}'
     http_version: 
-  recorded_at: Tue, 30 Dec 2014 20:42:38 GMT
+  recorded_at: Thu, 25 Jun 2015 14:46:29 GMT
 recorded_with: VCR 2.9.3

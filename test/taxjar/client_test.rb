@@ -18,10 +18,12 @@ describe Taxjar::Client do
       }
     end
 
-    it "should return a SalesTax" do
-      VCR.use_cassette("sales_tax") do
-        response = Taxjar::Client.new.sales_tax(@options)
-        response.must_be :hash
+    describe "v1" do
+      it "should return a SalesTax" do
+        VCR.use_cassette("sales_tax_v1") do
+          response = Taxjar::Client.new.sales_tax(@options)
+          response.must_be :hash
+        end
       end
     end
   end

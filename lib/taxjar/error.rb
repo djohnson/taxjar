@@ -16,4 +16,7 @@ module Taxjar
 
   # Raised when the method is not available in the configured API version or tier
   class NotAvailable < Error; end
+
+  # Raised when Taxjar configuration is invalid
+  class BadConfiguration < Error; end
 end

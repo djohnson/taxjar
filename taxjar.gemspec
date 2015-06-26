@@ -6,8 +6,8 @@ require 'taxjar/version'
 Gem::Specification.new do |spec|
   spec.name          = "taxjar"
   spec.version       = Taxjar::VERSION
-  spec.authors       = ["Darren Johnson"]
-  spec.email         = ["darrenbjohnson@gmail.com"]
+  spec.authors       = ["Darren Johnson, Ladislav Marsik"]
+  spec.email         = ["darrenbjohnson@gmail.com, laci.marsik@gmail.com"]
   spec.summary       = %q{A Ruby wrapper for the Taxjar API}
   spec.description   = %q{A Ruby wrapper for the Taxjar API's sales tax and tax rate endpoints}
   spec.homepage      = "http://github.com/djohnson/taxjar"

@@ -59,6 +59,13 @@ module Taxjar
       response.body
     end
 
+    def create_refund_transaction(options={})
+      raise Taxjar::NotAvailable, 'Method is only available for API v2' unless api_version == 2
+      raise Taxjar::NotAvailable, 'Method is only available for enhanced API tier' unless api_tier == 'enhanced'
+      response = @conn.post api_path('transactions', 'refunds'), options
+      response.body
+    end
+
     private
 
     def setup_conn

@@ -44,6 +44,30 @@ describe Taxjar::Client do
         }
       ]
     }
+
+    @options_refund_transaction = {
+      transaction_id: "REFUND_123456",
+      transaction_date: "2015/06/26",
+      transaction_reference_id: "123456",
+      amount: 10,
+      shipping: 2,
+      sales_tax: 0.84,
+      to_country: "US",
+      to_state: "NJ",
+      to_city: "Freehold",
+      to_zip: "07728",
+      from_country: "US",
+      from_state: "CA",
+      from_city: "Camarillo",
+      from_zip: "93010",
+      line_items: [
+        {
+          id: 123456,
+          unit_price: 20,
+          quantity: 1
+        }
+      ]
+    }
   end
 
   describe "v1" do
@@ -129,6 +153,15 @@ describe Taxjar::Client do
         it "should update order transaction" do
           VCR.use_cassette("v2/enhanced/update_order_transaction") do
             response = Taxjar::Client.new.update_order_transaction(@options_order_transaction)
+            response.must_be :hash
+          end
+        end
+      end
+
+      describe ".create_refund_transaction" do
+        it "should create a new refund transaction" do
+          VCR.use_cassette("v2/enhanced/create_refund_transaction") do
+            response = Taxjar::Client.new.create_refund_transaction(@options_refund_transaction)
             response.must_be :hash
           end
         end

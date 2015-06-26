@@ -52,6 +52,13 @@ module Taxjar
       response.body
     end
 
+    def update_order_transaction(options={})
+      raise Taxjar::NotAvailable, 'Method is only available for API v2' unless api_version == 2
+      raise Taxjar::NotAvailable, 'Method is only available for enhanced API tier' unless api_tier == 'enhanced'
+      response = @conn.put api_path('transactions', 'orders', options.delete(:transaction_id)), options
+      response.body
+    end
+
     private
 
     def setup_conn

@@ -107,6 +107,15 @@ describe Taxjar::Client do
         Taxjar.api_tier = 'enhanced'
       end
 
+      describe ".list_categories" do
+        it "should list tax categories" do
+          VCR.use_cassette("list_categories_v2") do
+            response = Taxjar::Client.new.list_categories()
+            response.must_be :hash
+          end
+        end
+      end
+
       describe ".create_order_transaction" do
         it "should create a new order transaction" do
           VCR.use_cassette("create_order_transaction_v2") do
@@ -116,10 +125,10 @@ describe Taxjar::Client do
         end
       end
 
-      describe ".list_categories" do
-        it "should list tax categories" do
-          VCR.use_cassette("list_categories_v2") do
-            response = Taxjar::Client.new.list_categories()
+      describe ".update_order_transaction" do
+        it "should update order transaction" do
+          VCR.use_cassette("update_order_transaction_v2") do
+            response = Taxjar::Client.new.update_order_transaction(@options_order_transaction)
             response.must_be :hash
           end
         end

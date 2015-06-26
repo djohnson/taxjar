@@ -131,4 +131,20 @@ describe Taxjar::Client do
       end
     end
   end
+
+  describe ".list_categories" do
+    before do
+      Taxjar.configure do |config|
+        config.api_version = 2
+        config.api_tier = 'enhanced'
+      end
+    end
+
+    it "should list tax categories" do
+      VCR.use_cassette("list_categories_v2") do
+        response = Taxjar::Client.new.list_categories()
+        response.must_be :hash
+      end
+    end
+  end
 end

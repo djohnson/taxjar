@@ -38,6 +38,13 @@ module Taxjar
       response.body
     end
 
+    def list_categories()
+      raise Taxjar::NotAvailable, 'Method is only available for API v2' unless api_version == 2
+      raise Taxjar::NotAvailable, 'Method is only available for enhanced API tier' unless api_tier == 'enhanced'
+      response = @conn.get api_path('categories')
+      response.body
+    end
+
     def create_order_transaction(options={})
       raise Taxjar::NotAvailable, 'Method is only available for API v2' unless api_version == 2
       raise Taxjar::NotAvailable, 'Method is only available for enhanced API tier' unless api_tier == 'enhanced'

@@ -67,7 +67,7 @@ response = Taxjar.client.tax_rate(options)
 (Enhanced API tier)
 
 ```ruby
-response = Taxjar.client.new.list_categories()
+response = Taxjar.client.list_categories()
 #  => {"categories":[{"name":"Other Exempt","product_tax_code":"99999","description":"item is exempt"}, ... ]}
 ```
 

@@ -97,7 +97,7 @@ options = {
     }
   ]
 }
-response = Taxjar::Client.new.create_order_transaction(options)
+response = Taxjar.client.create_order_transaction(options)
 #  => {"order":{"transaction_id":"123456","user_id":440,"transaction_date":"2015-06-26T00:00:00Z","from_country":"US","from_zip":"93010","from_state":"CA","from_city":"CAMARILLO","from_street":null,"to_country":"US","to_zip":"07728","to_state":"NJ","to_city":"FREEHOLD","to_street":null,"amount":"10.0","shipping":"2.0","sales_tax":"0.84","line_items":[{"id":1,"quantity":1,"product_identifier":null,"product_tax_code":null,"description":null,"unit_price":"20.0","discount":"0.0","sales_tax":"0.0"}]}}
 ```
 
@@ -109,7 +109,7 @@ options = {
   transaction_id: "123456",
   sales_tax: 0.94,
 }
-response = Taxjar::Client.new.update_order_transaction(options)
+response = Taxjar.client.update_order_transaction(options)
 #  => {"order":{"transaction_id":"123456","user_id":440,"transaction_date":"2015-06-26T00:00:00Z","from_country":"US","from_zip":"93010","from_state":"CA","from_city":"CAMARILLO","from_street":null,"to_country":"US","to_zip":"07728","to_state":"NJ","to_city":"FREEHOLD","to_street":null,"amount":"10.0","shipping":"2.0","sales_tax":"0.94","line_items":[{"id":1,"quantity":1,"product_identifier":null,"product_tax_code":null,"description":null,"unit_price":"20.0","discount":"0.0","sales_tax":"0.0"}]}}
 ```
 
@@ -140,7 +140,7 @@ options = {
     }
   ]
 }
-response = Taxjar::Client.new.create_refund_transaction(options)
+response = Taxjar.client.create_refund_transaction(options)
 #  => {"refund":{"transaction_id":"REFUND_123456","user_id":440,"transaction_date":"2015-06-26T00:00:00Z","transaction_reference_id":"123456","from_country":"US","from_zip":"93010","from_state":"CA","from_city":"CAMARILLO","from_street":null,"to_country":"US","to_zip":"07728","to_state":"NJ","to_city":"FREEHOLD","to_street":null,"amount":"10.0","shipping":"2.0","sales_tax":"0.84","line_items":[{"id":1,"quantity":1,"product_identifier":null,"product_tax_code":null,"description":null,"unit_price":"20.0","discount":"0.0","sales_tax":"0.0"}]}}
 ```
 
@@ -152,7 +152,7 @@ options = {
   transaction_id: "REFUND_123456",
   sales_tax: 0.94,
 }
-response = Taxjar::Client.new.update_refund_transaction(options)
+response = Taxjar.client.update_refund_transaction(options)
 #  => {"order":{"transaction_id":"123456","user_id":440,"transaction_date":"2015-06-26T00:00:00Z","from_country":"US","from_zip":"93010","from_state":"CA","from_city":"CAMARILLO","from_street":null,"to_country":"US","to_zip":"07728","to_state":"NJ","to_city":"FREEHOLD","to_street":null,"amount":"10.0","shipping":"2.0","sales_tax":"0.94","line_items":[{"id":1,"quantity":1,"product_identifier":null,"product_tax_code":null,"description":null,"unit_price":"20.0","discount":"0.0","sales_tax":"0.0"}]}}
 ```
 

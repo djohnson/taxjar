@@ -19,6 +19,13 @@ describe Taxjar::Client do
     end
 
     describe "v1" do
+      before do
+        Taxjar.configure do |config|
+          config.api_version = 1
+          config.api_tier = nil
+        end
+      end
+
       it "should return a SalesTax" do
         VCR.use_cassette("sales_tax_v1") do
           response = Taxjar::Client.new.sales_tax(@options)
@@ -54,6 +61,13 @@ describe Taxjar::Client do
     end
 
     describe "v1" do
+      before do
+        Taxjar.configure do |config|
+          config.api_version = 1
+          config.api_tier = nil
+        end
+      end
+
       it "should return a TaxRate" do
         VCR.use_cassette("tax_rate_v1") do
           response = Taxjar::Client.new.tax_rate(@options)

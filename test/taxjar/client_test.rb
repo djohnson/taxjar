@@ -56,7 +56,7 @@ describe Taxjar::Client do
 
     describe ".sales_tax" do
       it "should return a SalesTax" do
-        VCR.use_cassette("sales_tax_v1") do
+        VCR.use_cassette("v1/sales_tax") do
           response = Taxjar::Client.new.sales_tax(@options_sales_tax)
           response.must_be :hash
         end
@@ -65,7 +65,7 @@ describe Taxjar::Client do
 
     describe ".tax_rate" do
       it "should return a TaxRate" do
-        VCR.use_cassette("tax_rate_v1") do
+        VCR.use_cassette("v1/tax_rate") do
           response = Taxjar::Client.new.tax_rate(@options_tax_rate)
           response.must_be :hash
         end
@@ -85,7 +85,7 @@ describe Taxjar::Client do
 
       describe ".sales_tax" do
         it "should return a SalesTax" do
-          VCR.use_cassette("sales_tax_v2") do
+          VCR.use_cassette("v2/standard/sales_tax") do
             response = Taxjar::Client.new.sales_tax(@options_sales_tax)
             response.must_be :hash
           end
@@ -94,7 +94,7 @@ describe Taxjar::Client do
 
       describe ".tax_rate" do
         it "should return a TaxRate" do
-          VCR.use_cassette("tax_rate_v2") do
+          VCR.use_cassette("v2/standard/tax_rate") do
             response = Taxjar::Client.new.tax_rate(@options_tax_rate)
             response.must_be :hash
           end
@@ -109,7 +109,7 @@ describe Taxjar::Client do
 
       describe ".list_categories" do
         it "should list tax categories" do
-          VCR.use_cassette("list_categories_v2") do
+          VCR.use_cassette("v2/enhanced/list_categories") do
             response = Taxjar::Client.new.list_categories()
             response.must_be :hash
           end
@@ -118,7 +118,7 @@ describe Taxjar::Client do
 
       describe ".create_order_transaction" do
         it "should create a new order transaction" do
-          VCR.use_cassette("create_order_transaction_v2") do
+          VCR.use_cassette("v2/enhanced/create_order_transaction") do
             response = Taxjar::Client.new.create_order_transaction(@options_order_transaction)
             response.must_be :hash
           end
@@ -127,7 +127,7 @@ describe Taxjar::Client do
 
       describe ".update_order_transaction" do
         it "should update order transaction" do
-          VCR.use_cassette("update_order_transaction_v2") do
+          VCR.use_cassette("v2/enhanced/update_order_transaction") do
             response = Taxjar::Client.new.update_order_transaction(@options_order_transaction)
             response.must_be :hash
           end

@@ -10,10 +10,24 @@ module FaradayMiddleware
           raise Taxjar::BadRequest, error_message_400(response)
         when 401
           raise Taxjar::NotAuthorized, error_message_400(response)
+        when 403
+          raise Taxjar::Forbidden, error_message_400(response)
         when 404
           raise Taxjar::NotFound, error_message_400(response)
+        when 405
+          raise Taxjar::MethodNotAllowed, error_message_400(response)
+        when 406
+          raise Taxjar::NotAcceptable, error_message_400(response)
+        when 410
+          raise Taxjar::Gone, error_message_400(response)
+        when 422
+          raise Taxjar::UnprocessableEntity, error_message_400(response)
+        when 429
+          raise Taxjar::TooManyRequests, error_message_400(response)
         when 500
           raise Taxjar::InternalServerError, error_message_500(response, "Something is technically wrong.")
+        when 503
+          raise Taxjar::ServiceUnavailable, error_message_500(response, "Service is temporarily down for maintenance.")
         when 504
           raise Taxjar::GatewayTimeout, error_message_500(response, "504 Gateway Time-out")
         end

@@ -14,4 +14,6 @@ module Taxjar
   # Raised when Taxjar returns the HTTP status code 500
   class InternalServerError < Error; end
 
+  # Raised when the method is not available in the configured API version or tier
+  class NotAvailable < Error; end
 end

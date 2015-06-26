@@ -166,6 +166,15 @@ describe Taxjar::Client do
           end
         end
       end
+
+      describe ".update_refund_transaction" do
+        it "should update refund transaction" do
+          VCR.use_cassette("v2/enhanced/update_refund_transaction") do
+            response = Taxjar::Client.new.update_refund_transaction(@options_refund_transaction)
+            response.must_be :hash
+          end
+        end
+      end
     end
   end
 end

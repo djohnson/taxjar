@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: https://api.taxjar.com/v2/enhanced/transactions/refunds/REFUND_123456
+    body:
+      encoding: UTF-8
+      string: amount=10&from_city=Camarillo&from_country=US&from_state=CA&from_zip=93010&line_items%5B%5D%5Bid%5D=123456&line_items%5B%5D%5Bquantity%5D=1&line_items%5B%5D%5Bunit_price%5D=20&sales_tax=0.84&shipping=2&to_city=Freehold&to_country=US&to_state=NJ&to_zip=07728&transaction_date=2015%2F06%2F26&transaction_reference_id=123456
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - Taxjar ruby Gem 0.1.0
+      Authorization:
+      - Token token="dae79dc5154ccabd7cb169f616d605e7"
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Cowboy
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 26 Jun 2015 12:03:06 GMT
+      Status:
+      - 200 OK
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '539'
+      Etag:
+      - '"32c9d35f24aede17ea2a3831eb0b81c2"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 4ef6e4b2-b27c-4807-90a5-52422758a3c4
+      X-Runtime:
+      - '0.339815'
+      Via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"refund":{"transaction_id":"REFUND_123456","user_id":440,"transaction_date":"2015-06-26T00:00:00Z","transaction_reference_id":"123456","from_country":"US","from_zip":"93010","from_state":"CA","from_city":"CAMARILLO","from_street":null,"to_country":"US","to_zip":"07728","to_state":"NJ","to_city":"FREEHOLD","to_street":null,"amount":"10.0","shipping":"2.0","sales_tax":"0.84","line_items":[{"id":1,"quantity":1,"product_identifier":null,"product_tax_code":null,"description":null,"unit_price":"20.0","discount":"0.0","sales_tax":"0.0"}]}}'
+    http_version: 
+  recorded_at: Fri, 26 Jun 2015 12:03:17 GMT
+recorded_with: VCR 2.9.3

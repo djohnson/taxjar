@@ -64,7 +64,7 @@ module Taxjar
     end
 
     def update_refund_transaction(options={})
-      check_availability(method_version: 2, method_tier: 'enhanced')
+      check_availability(method_api_version: 2, method_api_tier: 'enhanced')
       response = @conn.put api_path('transactions', 'refunds', options.delete(:transaction_id)), options
       response.body
     end

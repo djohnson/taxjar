@@ -9,7 +9,9 @@ module Taxjar
       :format,
       :proxy,
       :user_agent,
-      :connection_options ]
+      :connection_options,
+      :api_version,
+      :api_tier ]
 
     DEFAULT_ADAPTER = Faraday.default_adapter
     DEFAULT_AUTH_TOKEN = "dae79dc5154ccabd7cb169f616d605e7"
@@ -19,6 +21,8 @@ module Taxjar
     DEFAULT_USER_AGENT = "Taxjar ruby Gem #{Taxjar::VERSION}".freeze
 
     DEFAULT_CONNECTION_OPTIONS = {}
+    DEFAULT_API_VERSION = 1
+    DEFAULT_API_TIER = nil
 
     attr_accessor *VALID_CONFIG_KEYS
 
@@ -44,6 +48,8 @@ module Taxjar
       self.proxy      = DEFAULT_PROXY
       self.user_agent = DEFAULT_USER_AGENT
       self.connection_options = DEFAULT_CONNECTION_OPTIONS
+      self.api_version = DEFAULT_API_VERSION
+      self.api_tier = DEFAULT_API_TIER
     end
 
   end # Configuration

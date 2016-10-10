@@ -113,6 +113,17 @@ response = Taxjar.client.update_order_transaction(options)
 #  => {"order":{"transaction_id":"123456","user_id":440,"transaction_date":"2015-06-26T00:00:00Z","from_country":"US","from_zip":"93010","from_state":"CA","from_city":"CAMARILLO","from_street":null,"to_country":"US","to_zip":"07728","to_state":"NJ","to_city":"FREEHOLD","to_street":null,"amount":"10.0","shipping":"2.0","sales_tax":"0.94","line_items":[{"id":1,"quantity":1,"product_identifier":null,"product_tax_code":null,"description":null,"unit_price":"20.0","discount":"0.0","sales_tax":"0.0"}]}}
 ```
 
+### Delete order transaction
+(Enhanced API tier)
+
+```ruby
+options = {
+  transaction_id: "123456"
+}
+response = Taxjar.client.delete_order_transaction(options)
+#  => {"order":{"transaction_id":"123456","user_id":440,"transaction_date":"2015-06-26T00:00:00Z","from_country":"US","from_zip":"93010","from_state":"CA","from_city":"CAMARILLO","from_street":null,"to_country":"US","to_zip":"07728","to_state":"NJ","to_city":"FREEHOLD","to_street":null,"amount":"10.0","shipping":"2.0","sales_tax":"0.94","line_items":[{"id":1,"quantity":1,"product_identifier":null,"product_tax_code":null,"description":null,"unit_price":"20.0","discount":"0.0","sales_tax":"0.0"}]}}
+```
+
 ### Create refund transaction
 (Enhanced API tier)
 
@@ -153,7 +164,18 @@ options = {
   sales_tax: 0.94,
 }
 response = Taxjar.client.update_refund_transaction(options)
-#  => {"order":{"transaction_id":"123456","user_id":440,"transaction_date":"2015-06-26T00:00:00Z","from_country":"US","from_zip":"93010","from_state":"CA","from_city":"CAMARILLO","from_street":null,"to_country":"US","to_zip":"07728","to_state":"NJ","to_city":"FREEHOLD","to_street":null,"amount":"10.0","shipping":"2.0","sales_tax":"0.94","line_items":[{"id":1,"quantity":1,"product_identifier":null,"product_tax_code":null,"description":null,"unit_price":"20.0","discount":"0.0","sales_tax":"0.0"}]}}
+#  => {"order":{"transaction_id":"REFUND_123456","user_id":440,"transaction_date":"2015-06-26T00:00:00Z","from_country":"US","from_zip":"93010","from_state":"CA","from_city":"CAMARILLO","from_street":null,"to_country":"US","to_zip":"07728","to_state":"NJ","to_city":"FREEHOLD","to_street":null,"amount":"10.0","shipping":"2.0","sales_tax":"0.94","line_items":[{"id":1,"quantity":1,"product_identifier":null,"product_tax_code":null,"description":null,"unit_price":"20.0","discount":"0.0","sales_tax":"0.0"}]}}
+```
+
+### Delete refund transaction
+(Enhanced API tier)
+
+```ruby
+options = {
+  transaction_id: "REFUND_123456"
+}
+response = Taxjar.client.update_refund_transaction(options)
+#  => {"order":{"transaction_id":"REFUND_123456","user_id":440,"transaction_date":"2015-06-26T00:00:00Z","from_country":"US","from_zip":"93010","from_state":"CA","from_city":"CAMARILLO","from_street":null,"to_country":"US","to_zip":"07728","to_state":"NJ","to_city":"FREEHOLD","to_street":null,"amount":"10.0","shipping":"2.0","sales_tax":"0.94","line_items":[{"id":1,"quantity":1,"product_identifier":null,"product_tax_code":null,"description":null,"unit_price":"20.0","discount":"0.0","sales_tax":"0.0"}]}}
 ```
 
 ## Contributing

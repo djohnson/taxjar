@@ -57,6 +57,12 @@ module Taxjar
       response.body
     end
 
+    def delete_order_transaction(options={})
+      check_availability(method_api_version: 2, method_api_tier: 'enhanced')
+      response = @conn.delete api_path('transactions', 'orders', options.delete(:transaction_id)), options
+      response.body
+    end
+
     def create_refund_transaction(options={})
       check_availability(method_api_version: 2, method_api_tier: 'enhanced')
       response = @conn.post api_path('transactions', 'refunds'), options
@@ -66,6 +72,12 @@ module Taxjar
     def update_refund_transaction(options={})
       check_availability(method_api_version: 2, method_api_tier: 'enhanced')
       response = @conn.put api_path('transactions', 'refunds', options.delete(:transaction_id)), options
+      response.body
+    end
+
+    def delete_refund_transaction(options={})
+      check_availability(method_api_version: 2, method_api_tier: 'enhanced')
+      response = @conn.delete api_path('transactions', 'refunds', options.delete(:transaction_id)), options
       response.body
     end
 

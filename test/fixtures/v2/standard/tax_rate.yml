@@ -10,7 +10,7 @@ http_interactions:
       Accept:
       - application/json; charset=utf-8
       User-Agent:
-      - Taxjar ruby Gem 0.1.0
+      - Taxjar ruby Gem 0.2.1
       Authorization:
       - Token token="dae79dc5154ccabd7cb169f616d605e7"
       Accept-Encoding:

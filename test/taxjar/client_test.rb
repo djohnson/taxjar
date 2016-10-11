@@ -158,6 +158,15 @@ describe Taxjar::Client do
         end
       end
 
+      describe ".delete_order_transaction" do
+        it "should delete order transaction" do
+          VCR.use_cassette("v2/enhanced/delete_order_transaction") do
+            response = Taxjar::Client.new.delete_order_transaction(@options_order_transaction)
+            response.must_be :hash
+          end
+        end
+      end
+
       describe ".create_refund_transaction" do
         it "should create a new refund transaction" do
           VCR.use_cassette("v2/enhanced/create_refund_transaction") do
@@ -171,6 +180,15 @@ describe Taxjar::Client do
         it "should update refund transaction" do
           VCR.use_cassette("v2/enhanced/update_refund_transaction") do
             response = Taxjar::Client.new.update_refund_transaction(@options_refund_transaction)
+            response.must_be :hash
+          end
+        end
+      end
+
+      describe ".delete_refund_transaction" do
+        it "should delete refund transaction" do
+          VCR.use_cassette("v2/enhanced/delete_refund_transaction") do
+            response = Taxjar::Client.new.delete_refund_transaction(@options_refund_transaction)
             response.must_be :hash
           end
         end
